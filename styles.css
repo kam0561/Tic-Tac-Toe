@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.heading{
+    font-size: 75px;
+    color: #f0f0f0;
+}
+.card{
+    padding-top: 50px;
+}
+.game{
+    padding-top: 50px;
+}
+.box{
+    height: 150px;
+    width: 150px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+.reset{
+    margin-top: 20px;
+    height: 50px;
+    width: 80px;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    color: black;
+    font-size: 20px;
+}
