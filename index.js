@@ -26,6 +26,8 @@ boxes.forEach((box) => {
             box.innerText="X";
             turnO= true;
         }
+        box.disabled= true;
+        checkWinner();
     });
 });
 
@@ -33,5 +35,20 @@ resetBtn.addEventListener("click",()=>{
     boxes.forEach((box) =>
     {
         box.innerText="";
+        box.disabled= false;
     })
 })
+
+const checkWinner=()=>{
+    for(pattern of winPattern)
+    {
+        a= boxes[pattern[0]].innerText;
+        b= boxes[pattern[1]].innerText;
+        c= boxes[pattern[2]].innerText;
+
+        if (a==b && b==c && (a!=''|| b!=''||c!=''))
+        {
+            alert("VICTORY");
+        }
+    }
+}
