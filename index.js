@@ -28,6 +28,7 @@ boxes.forEach((box) => {
         }
         box.disabled= true;
         checkWinner();
+        checkDraw();
     });
 });
 
@@ -52,3 +53,15 @@ const checkWinner=()=>{
         }
     }
 }
+
+const checkDraw = () => {
+    let isDraw = true;
+    boxes.forEach((box) => {
+        if (box.innerText === '') {
+            isDraw = false; // If any box is empty, it's not a draw
+        }
+    });
+    if (isDraw) {
+        alert("DRAW!");
+    }
+};
