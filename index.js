@@ -50,6 +50,10 @@ const checkWinner=()=>{
         if (a==b && b==c && (a!=''|| b!=''||c!=''))
         {
             alert("VICTORY");
+            boxes.forEach((box) =>
+            {
+                box.disabled= true;
+            })
         }
     }
 }
