@@ -3,7 +3,7 @@ let resetBtn = document.querySelector(".reset");
 let newGameBtn = document.querySelector("#new-btn");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
-
+let message = document.querySelector(".winner")
 let turnO= true;
 const winPattern=[
     [0,1,2],
@@ -36,7 +36,9 @@ resetBtn.addEventListener("click",()=>{
     boxes.forEach((box) =>
     {
         box.innerText="";
+        box.style.color="black"
         box.disabled= false;
+        message.innerText="";
     })
 })
 
@@ -49,11 +51,14 @@ const checkWinner=()=>{
 
         if (a==b && b==c && (a!=''|| b!=''||c!=''))
         {
-            alert("VICTORY");
+            boxes[pattern[0]].style.color="green";
+            boxes[pattern[1]].style.color="green";
+            boxes[pattern[2]].style.color="green";
             boxes.forEach((box) =>
             {
                 box.disabled= true;
             })
+            message.innerText="The Winner is "+a;
         }
     }
 }
@@ -66,6 +71,6 @@ const checkDraw = () => {
         }
     });
     if (isDraw) {
-        alert("DRAW!");
+        message.innerText="DRAW !";
     }
 };
